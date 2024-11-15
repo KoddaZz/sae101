@@ -2,7 +2,7 @@
 #include "etudiant.h"
 #include <stdio.h>
 
-void stagePourvuAfectation(int tLogEtudiant, int tReferenceStageEtudiant[], int tNumeroEtudiant[]){
+void stagePourvuAffectation(int tLogEtudiant, int tReferenceStageEtudiant[], int tNumeroEtudiant[]){
   int i = 0;
 
   for(i = 0; i < tLogEtudiant; ++i){
@@ -322,7 +322,7 @@ int suppressionStage(int *tLogOffreStage, int tReferenceOffreStage[], int tDept[
     return *tLogOffreStage;
   }
 
-  for (i = 0; i < *tLogOffreStage; i++) {
+  for (i = 0; i < *tLogOffreStage; ++i) {
     if (tReferenceOffreStage[i] == refSaisie && tDept[i] == deptSaisie) {
       
       for (j = i; j < *tLogOffreStage - 1; j++) {
@@ -369,7 +369,7 @@ int globaleResponsable(int tLogEtudiant, int tReferenceStageEtudiant[], int tNum
       while(getchar() != '\n');
     }
     else if (valeurEntree == 1){
-      stagePourvuAfectation(tLogEtudiant, tReferenceStageEtudiant, tNumeroEtudiant);
+      stagePourvuAffectation(tLogEtudiant, tReferenceStageEtudiant, tNumeroEtudiant);
     }
     else if (valeurEntree == 2){
       stageNonPourvu(tLogOffreStage, tPourvu, tReferenceOffreStage);
